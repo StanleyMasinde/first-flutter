@@ -55,23 +55,74 @@ class _HomePageState extends State<HomePage>
           ),
         ),
         Container(
-            child:
-                Image.network('https://covid19kenya.site/images/infected.png')),
-        Column(
-          children: [
-            Container(
-              child: FlatButton(
-                child: Text('Get Help'),
-              ),
-            ),
-            Container(
-              child: FlatButton(
-                child: Text('Settings'),
-              ),
-            ),
-          ],
+            child: Image.network(
+          'https://covid19kenya.site/images/infected.png',
+        )),
+        Container(
+          child: Column(
+            children: [
+              Container(
+                width: 350.0,
+                  child:
+                      SizedBox(width: double.infinity, child: GetHelpButton())),
+              Container(
+                width: 350.0,
+                  child: SizedBox(
+                      width: double.infinity, child: SettingsButton())),
+            ],
+          ),
         )
       ],
+    );
+  }
+}
+
+/// Get Help button
+
+class GetHelpButton extends StatelessWidget {
+  const GetHelpButton({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      color: Colors.teal,
+      textColor: Colors.white,
+      disabledColor: Colors.grey,
+      disabledTextColor: Colors.black,
+      padding: EdgeInsets.all(8.0),
+      splashColor: Colors.blueAccent,
+      onPressed: () => {},
+      child: Text(
+        'Get Help',
+        style: TextStyle(fontSize: 20.0),
+      ),
+    );
+  }
+}
+
+/// Settings button
+
+class SettingsButton extends StatelessWidget {
+  const SettingsButton({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      color: Colors.teal,
+      textColor: Colors.white,
+      disabledColor: Colors.grey,
+      disabledTextColor: Colors.black,
+      padding: EdgeInsets.all(8.0),
+      splashColor: Colors.blueAccent,
+      onPressed: () => {},
+      child: Text(
+        'Settings',
+        style: TextStyle(fontSize: 20.0),
+      ),
     );
   }
 }
