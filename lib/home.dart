@@ -7,11 +7,6 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        backgroundColor: Colors.teal,
-        centerTitle: true,
-      ),
       body: HomePage(),
     );
   }
@@ -40,18 +35,21 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return GridView.count(
+      childAspectRatio: 1.9,
+      primary: false,
+      padding: const EdgeInsets.all(0),
+      crossAxisSpacing: 1,
+      mainAxisSpacing: 1,
+      crossAxisCount: 1,
+      children: <Widget>[
         Container(
           child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'HEAD ACHE . FEVER . DRY COUGH . BREATHING DIFFICULTY',
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 22),
-                overflow: TextOverflow.visible,
-                textAlign: TextAlign.center,
-              ),
+            child: Text(
+              'HEAD ACHE . FEVER . DRY COUGH . BREATHING DIFFICULTY',
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 22),
+              overflow: TextOverflow.visible,
+              textAlign: TextAlign.center,
             ),
           ),
         ),
