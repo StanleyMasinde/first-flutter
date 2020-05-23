@@ -54,207 +54,142 @@ class _StatsBodyState extends State<StatsBody> {
           var tests = snapshot.data.tests;
           var newDeaths = snapshot.data.todayDeaths;
 
-          return Column(
-            children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: 200.0,
-                      height: 80.0,
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Text(
-                              'Total Cases',
-                              style: Theme.of(context).textTheme.headline5,
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              '$cases',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+          return GridView.count(
+            addAutomaticKeepAlives: true,
+            childAspectRatio: 1.9,
+            primary: false,
+            padding: const EdgeInsets.all(35),
+            crossAxisSpacing: 1,
+            mainAxisSpacing: 25,
+            crossAxisCount: 2,
+            children: <Widget>[
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      'Total Cases',
+                      style: Theme.of(context).textTheme.headline5,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: 200.0,
-                      height: 80.0,
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Text(
-                              'New Cases',
-                              style: Theme.of(context).textTheme.headline5,
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              '$todayCases',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+                    Text(
+                      '$cases',
+                      style: Theme.of(context).textTheme.headline4,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: 200.0,
-                      height: 100.0,
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Text(
-                              'Critical Cases',
-                              style: Theme.of(context).textTheme.headline5,
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              '$criticaCases',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      'New Cases',
+                      style: Theme.of(context).textTheme.headline5,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: 200.0,
-                      height: 100.0,
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Text(
-                              'Recoveries',
-                              style: Theme.of(context).textTheme.headline5,
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              '$recoverd',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+                    Text(
+                      '$todayCases',
+                      style: Theme.of(context).textTheme.headline4,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: 200.0,
-                      height: 100.0,
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Text(
-                              'Active Cases',
-                              style: Theme.of(context).textTheme.headline5,
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              '$active',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      'Critical Cases',
+                      style: Theme.of(context).textTheme.headline5,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: 200.0,
-                      height: 100.0,
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Text(
-                              'Casualties',
-                              style: Theme.of(context).textTheme.headline5,
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              '$deaths',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+                    Text(
+                      '$criticaCases',
+                      style: Theme.of(context).textTheme.headline4,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: 200.0,
-                      height: 100.0,
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Text(
-                              'New Deaths',
-                              style: Theme.of(context).textTheme.headline5,
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              '$newDeaths',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      'Recoveries',
+                      style: Theme.of(context).textTheme.headline5,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: 200.0,
-                      height: 100.0,
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Text(
-                              'Number of tests',
-                              style: Theme.of(context).textTheme.headline5,
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              '$tests',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
+                    Text(
+                      '$recoverd',
+                      style: Theme.of(context).textTheme.headline4,
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                  ],
+                ),
+              ),
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      'Active Cases',
+                      style: Theme.of(context).textTheme.headline5,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      '$active',
+                      style: Theme.of(context).textTheme.headline4,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      'Casualties',
+                      style: Theme.of(context).textTheme.headline5,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      '$deaths',
+                      style: Theme.of(context).textTheme.headline4,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      'New Deaths',
+                      style: Theme.of(context).textTheme.headline5,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      '$newDeaths',
+                      style: Theme.of(context).textTheme.headline4,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      'Tests',
+                      style: Theme.of(context).textTheme.headline5,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      '$tests',
+                      style: Theme.of(context).textTheme.headline4,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
             ],
           );
