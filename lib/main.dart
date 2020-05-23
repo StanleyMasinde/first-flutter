@@ -1,39 +1,35 @@
+import 'package:Covid19Kenya/home.dart';
+import 'package:Covid19Kenya/information.dart';
+import 'package:Covid19Kenya/precautions.dart';
 import 'package:Covid19Kenya/stats.dart';
 import 'package:flutter/material.dart';
 import 'package:Covid19Kenya/news.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(Application());
 
-/// This Widget is the main application widget.
-class MyApp extends StatelessWidget {
-  static const String _title = 'Flutter Code Sample';
+class Application extends StatelessWidget {
+  static const String _title = 'Covid19Kenya';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      home: MyStatefulWidget(),
+      home: Covid19Kenya(),
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key}) : super(key: key);
+class Covid19Kenya extends StatefulWidget {
+  Covid19Kenya({Key key}) : super(key: key);
 
   @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+  _Covid19KenyaState createState() => _Covid19KenyaState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _Covid19KenyaState extends State<Covid19Kenya> {
   int _selectedIndex = 0;
 
-  var _widgetOptions = [
-    Text(
-      'Index 0: Home',
-    ),
-    Stats(),
-    News()
-  ];
+  var _widgetOptions = [Home(), Stats(), News(), Precautions(), Information()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -61,9 +57,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             icon: Icon(Icons.pageview),
             title: Text('news'),
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.warning),
+            title: Text('Precautions'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info),
+            title: Text('Information'),
+          )
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.teal,
       ),
     );
   }
