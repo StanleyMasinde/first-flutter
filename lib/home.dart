@@ -93,7 +93,9 @@ class GetHelpButton extends StatelessWidget {
       disabledTextColor: Colors.black,
       padding: EdgeInsets.all(8.0),
       splashColor: Colors.blueAccent,
-      onPressed: () => {},
+      onPressed: () => {
+        Navigator.of(context).pushNamed('/helpline')
+      },
       child: Text(
         'Get Help',
         style: TextStyle(fontSize: 20.0),
@@ -118,7 +120,9 @@ class SettingsButton extends StatelessWidget {
       disabledTextColor: Colors.black,
       padding: EdgeInsets.all(8.0),
       splashColor: Colors.blueAccent,
-      onPressed: () => {},
+      onPressed: () => {
+        Navigator.of(context).pushNamed('/settings')
+      },
       child: Text(
         'Settings',
         style: TextStyle(fontSize: 20.0),

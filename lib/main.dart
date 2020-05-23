@@ -1,6 +1,8 @@
+import 'package:Covid19Kenya/help.dart';
 import 'package:Covid19Kenya/home.dart';
 import 'package:Covid19Kenya/information.dart';
 import 'package:Covid19Kenya/precautions.dart';
+import 'package:Covid19Kenya/settings.dart';
 import 'package:Covid19Kenya/stats.dart';
 import 'package:flutter/material.dart';
 import 'package:Covid19Kenya/news.dart';
@@ -13,6 +15,10 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/helpline': (context) => Help(),
+        '/settings': (context) => Settings()
+      },
       title: _title,
       home: Covid19Kenya(),
     );
