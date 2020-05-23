@@ -10,6 +10,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home'),
         backgroundColor: Colors.teal,
+        centerTitle: true,
       ),
       body: HomePage(),
     );
@@ -55,18 +56,18 @@ class _HomePageState extends State<HomePage>
           ),
         ),
         Container(
-            child: Image.network(
-          'https://covid19kenya.site/images/infected.png',
+            child: Image.asset(
+          'assets/infected.png',
         )),
         Container(
           child: Column(
             children: [
               Container(
-                width: 350.0,
+                  width: 350.0,
                   child:
                       SizedBox(width: double.infinity, child: GetHelpButton())),
               Container(
-                width: 350.0,
+                  width: 350.0,
                   child: SizedBox(
                       width: double.infinity, child: SettingsButton())),
             ],
@@ -93,9 +94,7 @@ class GetHelpButton extends StatelessWidget {
       disabledTextColor: Colors.black,
       padding: EdgeInsets.all(8.0),
       splashColor: Colors.blueAccent,
-      onPressed: () => {
-        Navigator.of(context).pushNamed('/helpline')
-      },
+      onPressed: () => {Navigator.of(context).pushNamed('/helpline')},
       child: Text(
         'Get Help',
         style: TextStyle(fontSize: 20.0),
@@ -120,9 +119,7 @@ class SettingsButton extends StatelessWidget {
       disabledTextColor: Colors.black,
       padding: EdgeInsets.all(8.0),
       splashColor: Colors.blueAccent,
-      onPressed: () => {
-        Navigator.of(context).pushNamed('/settings')
-      },
+      onPressed: () => {Navigator.of(context).pushNamed('/settings')},
       child: Text(
         'Settings',
         style: TextStyle(fontSize: 20.0),
